@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviva Camp 2026 | Igreja Elos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0f1714;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-gold: #d4af37;
+            --accent-gold-glow: rgba(212, 175, 55, 0.3);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 15% 30%, rgba(212, 175, 55, 0.06), transparent 30%),
+                radial-gradient(circle at 85% 70%, rgba(30, 58, 138, 0.08), transparent 30%);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1s all cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 80px 20px 40px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 25px var(--accent-gold-glow);
+        }
+
+        h2 {
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            color: var(--text-muted);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .info-container {
+            max-width: 900px;
+            width: 90%;
+            margin: 0 auto 60px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            text-align: left;
+        }
+
+        .info-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .info-item span {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .pricing-box {
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 15px;
+        }
+
+        .pricing-box h4 {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 8px;
+        }
+
+        .pricing-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .pricing-list li {
+            font-size: 1rem;
+            color: #d1d5db;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px dashed rgba(255,255,255,0.05);
+            padding-bottom: 8px;
+        }
+
+        .pricing-list li span.price {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .alert-box {
+            background: rgba(185, 28, 28, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: #fca5a5;
+            line-height: 1.5;
+        }
+
+        .warning-deadline {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+        }
+
+        .tribes-section {
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 20px;
+            margin-bottom: 60px;
+        }
+
+        .tribes-section h3 {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .tribes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            width: 100%;
+            perspective: 1000px;
+        }
+
+        .tribe-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform-style: preserve-3d;
+            box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+            transition: transform 0.5s ease-out; 
+        }
+
+        .tribe-card img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 12px;
+            transform: translateZ(30px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+            filter: grayscale(20%) contrast(1.1);
+            transition: var(--transition);
+        }
+
+        .tribe-card:hover img {
+            filter: grayscale(0%) contrast(1.2);
+        }
+
+        .tribe-name {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            transform: translateZ(40px);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .color-leao { color: #facc15; }
+        .color-aguia { color: #60a5fa; }
+        .color-urso { color: #f87171; }
+
+        footer {
+            margin-top: auto;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .info-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="hero-section">
+        <header class="reveal">
+            <h1>Aviva Camp 2026</h1>
+            <h2>Igreja Elos</h2>
+        </header>
+
+        <div class="info-container">
+            <div class="info-card reveal" style="transition-delay: 0.2s;">
+                <h3>Detalhes do Evento</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>P&uacute;blico-Alvo</strong>
+                        <span>Jovens e Adolescentes</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Datas</strong>
+                        <span>27, 28 e 29 de Novembro</span>
+                    </div>
+                </div>
+                <p style="color: var(--text-muted); text-align: center; font-size: 1.05rem; line-height: 1.6;">
+                    Bora viver um final de semana incr&iacute;vel com Deus e com a galera? Prepare-se para dias inesquec&iacute;veis! &#128591;&#128293;
+                </p>
+                <div class="warning-deadline">
+                    &#128680; Vagas limitadas! Inscri&ccedil;&otilde;es at&eacute; 30 de Setembro.
+                </div>
+            </div>
+
+            <div class="info-card reveal" style="transition-delay: 0.3s;">
+                <h3>Investimento e Formas de Pagamento</h3>
+                
+                <div class="pricing-box">
+                    <h4>Valor &Agrave; Vista</h4>
+                    <ul class="pricing-list">
+                        <li><span>Pagamento integral</span> <span class="price">R$ 320,00</span></li>
+                    </ul>
+                    <div class="alert-box">
+                        &#9888;&#65039; O pagamento &agrave; vista deve ser realizado at&eacute; o dia <strong>10/10</strong>.
+                    </div>
+                </div>
+
+                <div class="pricing-box" style="margin-top: 20px;">
+                    <h4>Parcelamento no Cart&atilde;o &mdash; R$ 350,00</h4>
+                    <ul class="pricing-list">
+                        <li><span>3x</span> <span>setembro, outubro e novembro</span></li>
+                        <li><span>2x</span> <span>outubro e novembro</span></li>
+                    </ul>
+                    <div class="alert-box">
+                        &#9888;&#65039; Para pagamento parcelado no cart&atilde;o, o &uacute;ltimo dia &eacute; <strong>10/10</strong>, com possibilidade de parcelamento em at&eacute; 2x.
+                    </div>
+                </div>
+
+                <div class="pricing-box" style="margin-top: 20px;">
+                    <h4>Parcelamento no PIX &mdash; R$ 350,00</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">
+                        Para pagamento parcelado via PIX, converse diretamente com <strong>Aline</strong> ou <strong>Michele</strong> para combinar os pagamentos.
+                    </p>
+                    <div class="alert-box">
+                        &#9888;&#65039; Para o pagamento parcelado no PIX a &uacute;ltima parcela deve ser realizada at&eacute; o dia <strong>10/10</strong>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="tribes-section">
+            <h3 class="reveal">As Tribos</h3>
+            <div class="tribes-grid">
+                <div class="tribe-card reveal" style="transition-delay: 0.4s;">
+                    <img src="Tribo Leoes.jpeg" alt="Tribo Le&otilde;es">
+                    <h4 class="tribe-name color-leao">Le&otilde;es</h4>
+                </div>
+                
+                <div class="tribe-card reveal" style="transition-delay: 0.5s;">
+                    <img src="Tribo Aguias.jpeg" alt="Tribo &Aacute;guias">
+                    <h4 class="tribe-name color-aguia">&Aacute;guias</h4>
+                </div>
+                
+                <div class="tribe-card reveal" style="transition-delay: 0.6s;">
+                    <img src="Tribo Ursos.jpeg" alt="Tribo Ursos">
+                    <h4 class="tribe-name color-urso">Ursos</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Igreja Elos &bull; Aviva Camp &bull; Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        class UIController {
+            constructor() {
+                this.initScrollReveal();
+                this.init3DCardTilt();
+            }
+
+            initScrollReveal() {
+                const reveals = document.querySelectorAll('.reveal');
+                const revealOptions = {
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -50px 0px"
+                };
+
+                const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) return;
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); 
+                    });
+                }, revealOptions);
+
+                reveals.forEach(element => revealOnScroll.observe(element));
+            }
+
+            init3DCardTilt() {
+                const cards = document.querySelectorAll('.tribe-card');
+                
+                cards.forEach(card => {
+                    card.addEventListener('mousemove', (e) => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left; 
+                        const y = e.clientY - rect.top;  
+                        
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+                        
+                        const rotateX = ((y - centerY) / centerY) * -15; 
+                        const rotateY = ((x - centerX) / centerX) * 15;
+
+                        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                        card.style.transition = 'none'; 
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                        card.style.transition = 'transform 0.5s ease-out';
+                    });
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new UIController();
+        });
+    </script>
+</body>
+</html>
