@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aviva Camp 2026 | Igreja Elos</title>
+    <title>Avivah Acamp 2026 | Igreja Elos</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
@@ -97,14 +97,14 @@
             font-family: 'Cinzel', serif;
             color: var(--accent-gold);
             font-size: 1.8rem;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             text-align: center;
             letter-spacing: 2px;
         }
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
             margin-bottom: 25px;
         }
@@ -192,6 +192,79 @@
             letter-spacing: 1px;
         }
 
+        .reason-list, .checklist-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .reason-list li, .checklist-list li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding-bottom: 14px;
+            border-bottom: 1px dashed rgba(255,255,255,0.08);
+        }
+
+        .reason-list li:last-child, .checklist-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .reason-list .mark, .checklist-list .mark {
+            flex-shrink: 0;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border: 1.5px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            margin-top: 2px;
+        }
+
+        .reason-list .mark svg, .checklist-list .mark svg {
+            width: 13px;
+            height: 13px;
+        }
+
+        .reason-list strong, .checklist-list strong {
+            display: block;
+            font-size: 1.02rem;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .reason-list p, .checklist-list .note {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 32px;
+        }
+
+        .video-wrapper {
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto 50px auto;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            background: #000;
+        }
+        
+        .video-wrapper video {
+            width: 100%;
+            display: block;
+        }
+
         .tribes-section {
             max-width: 1200px;
             width: 100%;
@@ -204,8 +277,16 @@
             text-align: center;
             font-size: 2rem;
             color: var(--accent-gold);
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             letter-spacing: 2px;
+        }
+
+        .tribes-section .tribes-intro {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 60ch;
+            margin: 0 auto 30px;
+            font-size: 1rem;
         }
 
         .tribes-grid {
@@ -226,6 +307,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            min-height: 250px;
             transform-style: preserve-3d;
             box-shadow: 0 25px 45px rgba(0,0,0,0.2);
             transition: transform 0.5s ease-out; 
@@ -235,6 +318,7 @@
             width: 100%;
             height: 380px;
             object-fit: cover;
+            object-position: center 25%;
             border-radius: 12px;
             transform: translateZ(30px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.5);
@@ -249,7 +333,7 @@
 
         .tribe-name {
             font-family: 'Cinzel', serif;
-            font-size: 2rem;
+            font-size: 2.5rem;
             transform: translateZ(40px);
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
@@ -271,6 +355,7 @@
 
         @media (max-width: 768px) {
             .info-card { padding: 20px; }
+            .checklist-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -278,82 +363,151 @@
 
     <main class="hero-section">
         <header class="reveal">
-            <h1>Aviva Camp 2026</h1>
+            <h1>Avivah Acamp 2026</h1>
             <h2>Igreja Elos</h2>
         </header>
+
+        <div class="video-wrapper reveal" style="transition-delay: 0.15s;">
+            <video controls>
+                <source src="video avivah acamp 2026.mp4" type="video/mp4">
+                O seu navegador não suporta a etiqueta de vídeo.
+            </video>
+        </div>
 
         <div class="info-container">
             <div class="info-card reveal" style="transition-delay: 0.2s;">
                 <h3>Detalhes do Evento</h3>
                 <div class="info-grid">
                     <div class="info-item">
-                        <strong>P&uacute;blico-Alvo</strong>
+                        <strong>Público-Alvo</strong>
                         <span>Jovens e Adolescentes</span>
                     </div>
                     <div class="info-item">
                         <strong>Datas</strong>
                         <span>27, 28 e 29 de Novembro</span>
                     </div>
+                    <div class="info-item">
+                        <strong>Local</strong>
+                        <span>Chácara reservada para o evento</span>
+                    </div>
                 </div>
                 <p style="color: var(--text-muted); text-align: center; font-size: 1.05rem; line-height: 1.6;">
-                    Bora viver um final de semana incr&iacute;vel com Deus e com a galera? Prepare-se para dias inesquec&iacute;veis! &#128591;&#128293;
+                    Bora viver um final de semana incrível com Deus e com a galera? Prepare-se para dias inesquecíveis! 🙏🔥
                 </p>
                 <div class="warning-deadline">
-                    &#128680; Vagas limitadas! Inscri&ccedil;&otilde;es at&eacute; 30 de Setembro.
+                    🚨 Vagas limitadas! Inscrições até 30 de Setembro.
                 </div>
+            </div>
+
+            <div class="info-card reveal" style="transition-delay: 0.25s;">
+                <h3>Por que estar no retiro é tão importante</h3>
+                <ul class="reason-list">
+                    <li>
+                        <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M6 7c3 0 4 1 6 1s3-1 6-1M6 12c3 0 4 1 6 1s3-1 6-1"/></svg></span>
+                        <div>
+                            <strong>Palavra viva</strong>
+                            <p>Momentos diários na Bíblia, em grupo e sozinho, sem pressa pra ouvir o que Deus tem a dizer.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M9 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM23 20v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                        <div>
+                            <strong>Comunidade real</strong>
+                            <p>Amizades que continuam depois que o acampamento acaba, vividas lado a lado dentro da tribo.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c6-4 9-8 9-13a9 9 0 0 0-18 0c0 5 3 9 9 13Z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+                        <div>
+                            <strong>Descanso de verdade</strong>
+                            <p>Três dias longe da rotina e da tela, na chácara, só com o essencial.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 9 22 10 17 15 18 22 12 18.5 6 22 7 15 2 10 9 9 12 2Z"/></svg></span>
+                        <div>
+                            <strong>Fé em prática</strong>
+                            <p>Levar pra casa o que foi vivido lá, não só ouvido — e voltar diferente.</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
 
             <div class="info-card reveal" style="transition-delay: 0.3s;">
                 <h3>Investimento e Formas de Pagamento</h3>
                 
                 <div class="pricing-box">
-                    <h4>Valor &Agrave; Vista</h4>
+                    <h4>Valor À Vista</h4>
                     <ul class="pricing-list">
                         <li><span>Pagamento integral</span> <span class="price">R$ 320,00</span></li>
                     </ul>
                     <div class="alert-box">
-                        &#9888;&#65039; O pagamento &agrave; vista deve ser realizado at&eacute; o dia <strong>10/10</strong>.
+                        ⚠️ O pagamento à vista deve ser realizado até o dia <strong>10/10</strong>.
                     </div>
                 </div>
 
                 <div class="pricing-box" style="margin-top: 20px;">
-                    <h4>Parcelamento no Cart&atilde;o &mdash; R$ 350,00</h4>
+                    <h4>Parcelamento no Cartão — R$ 350,00</h4>
                     <ul class="pricing-list">
                         <li><span>3x</span> <span>setembro, outubro e novembro</span></li>
                         <li><span>2x</span> <span>outubro e novembro</span></li>
                     </ul>
                     <div class="alert-box">
-                        &#9888;&#65039; Para pagamento parcelado no cart&atilde;o, o &uacute;ltimo dia &eacute; <strong>10/10</strong>, com possibilidade de parcelamento em at&eacute; 2x.
+                        ⚠️ Para pagamento parcelado no cartão, o último dia é <strong>10/10</strong>, com possibilidade de parcelamento em até 2x.
                     </div>
                 </div>
 
                 <div class="pricing-box" style="margin-top: 20px;">
-                    <h4>Parcelamento no PIX &mdash; R$ 350,00</h4>
+                    <h4>Parcelamento no PIX — R$ 350,00</h4>
                     <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">
                         Para pagamento parcelado via PIX, converse diretamente com <strong>Aline</strong> ou <strong>Michele</strong> para combinar os pagamentos.
                     </p>
                     <div class="alert-box">
-                        &#9888;&#65039; Para o pagamento parcelado no PIX a &uacute;ltima parcela deve ser realizada at&eacute; o dia <strong>10/10</strong>.
+                        ⚠️ Para o pagamento parcelado no PIX a última parcela deve ser realizada até o dia <strong>10/10</strong>.
                     </div>
+                </div>
+            </div>
+
+            <div class="info-card reveal" style="transition-delay: 0.35s;">
+                <h3>O que levar</h3>
+                <div class="checklist-grid">
+                    <ul class="checklist-list">
+                        <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Bíblia</strong></div></li>
+                        <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Roupa de cama</strong></div></li>
+                        <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Travesseiro e cobertor</strong></div></li>
+                        <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Agasalho</strong></div></li>
+                        <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Itens de higiene pessoal</strong></div></li>
+                        <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Toalha de banho e de rosto</strong></div></li>
+                        <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Papel higiênico</strong></div></li>
+                    </ul>
+                    <ul class="checklist-list">
+                        <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Lanche extra</strong><p class="note">Para quem se alimenta mais de uma vez ou tem necessidades específicas de alimentação</p></div></li>
+                        <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Roupas de banho</strong><p class="note">Usar shorts/boardshorts e camiseta de proteção UV</p></div></li>
+                        <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Farmacinha</strong><p class="note">Seus medicamentos de uso contínuo ou eventual</p></div></li>
+                        <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Itens de lazer</strong><p class="note">Bolas, peteca e jogos de tabuleiro</p></div></li>
+                        <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Protetor solar</strong></div></li>
+                        <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Roupa adequada</strong></div></li>
+                    </ul>
                 </div>
             </div>
         </div>
 
         <section class="tribes-section">
             <h3 class="reveal">As Tribos</h3>
+            <p class="tribes-intro reveal">Quando chegar lá, você entra pra uma tribo. É nela que você vive o acampamento inteiro.</p>
             <div class="tribes-grid">
                 <div class="tribe-card reveal" style="transition-delay: 0.4s;">
-                    <img src="Tribo Leoes.jpeg" alt="Tribo Le&otilde;es">
-                    <h4 class="tribe-name color-leao">Le&otilde;es</h4>
+                    <img src="Tribo Leoes.jpeg" alt="Estandarte da Tribo Leões">
+                    <h4 class="tribe-name color-leao">Leões</h4>
                 </div>
                 
                 <div class="tribe-card reveal" style="transition-delay: 0.5s;">
-                    <img src="Tribo Aguias.jpeg" alt="Tribo &Aacute;guias">
-                    <h4 class="tribe-name color-aguia">&Aacute;guias</h4>
+                    <img src="Tribo Aguias.jpeg" alt="Estandarte da Tribo Águias">
+                    <h4 class="tribe-name color-aguia">Águias</h4>
                 </div>
                 
                 <div class="tribe-card reveal" style="transition-delay: 0.6s;">
-                    <img src="Tribo Ursos.jpeg" alt="Tribo Ursos">
+                    <img src="Tribo Ursos.jpeg" alt="Estandarte da Tribo Ursos">
                     <h4 class="tribe-name color-urso">Ursos</h4>
                 </div>
             </div>
@@ -361,7 +515,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Igreja Elos &bull; Aviva Camp &bull; Todos os direitos reservados</p>
+        <p>&copy; 2026 Igreja Elos &bull; Avivah Acamp &bull; Todos os direitos reservados</p>
     </footer>
 
     <script>
